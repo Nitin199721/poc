@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Poc1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Application">
+    <Key>
+      <PropertyRef Name="app_id" />
+    </Key>
+    <Property Name="app_id" Type="int" Nullable="false" />
+    <Property Name="price" Type="float" />
+    <Property Name="img" Type="varbinary" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="username" Type="varchar" MaxLength="20" />
+    <Property Name="email" Type="nvarchar" MaxLength="80" />
+    <Property Name="phone_number" Type="varchar" MaxLength="20" />
+    <Property Name="message" Type="varchar" MaxLength="150" />
+    <Property Name="ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="Poc1ModelStoreContainer">
+    <EntitySet Name="Application" EntityType="Self.Application" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
